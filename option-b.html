@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1440px; font-family:'Inter',sans-serif; background:#F8F6F0; }
+
+  nav { background:#D4A017; padding:20px 80px; display:flex; align-items:center; justify-content:space-between; }
+  .logo-name { font-size:22px; font-weight:900; color:#1A2E1A; letter-spacing:0.5px; }
+  .logo-sub { font-size:10px; color:rgba(26,46,26,0.6); font-weight:700; letter-spacing:2px; text-transform:uppercase; }
+  .nav-links { display:flex; gap:32px; align-items:center; }
+  .nav-links a { color:#1A2E1A; font-size:15px; font-weight:600; text-decoration:none; }
+  .nav-cta { background:#1A2E1A; color:#fff !important; padding:12px 28px; border-radius:8px; }
+
+  /* HERO - big image style */
+  .hero { background:#1A2E1A; padding:0; display:flex; min-height:620px; }
+  .hero-left { flex:1; padding:100px 80px; display:flex; flex-direction:column; justify-content:center; }
+  .hero-tag { background:#D4A017; color:#1A2E1A; display:inline-block; padding:8px 20px; border-radius:4px; font-size:13px; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:28px; }
+  .hero h1 { font-size:72px; font-weight:900; color:#fff; line-height:1; margin-bottom:24px; }
+  .hero h1 em { color:#D4A017; font-style:normal; display:block; }
+  .hero-sub { font-size:19px; color:rgba(255,255,255,0.65); line-height:1.65; max-width:480px; margin-bottom:44px; }
+  .hero-form { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:32px; max-width:420px; }
+  .form-title { font-size:16px; font-weight:800; color:#fff; margin-bottom:20px; }
+  .form-row { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:14px 18px; margin-bottom:12px; color:rgba(255,255,255,0.4); font-size:15px; }
+  .form-btn { background:#D4A017; color:#1A2E1A; width:100%; padding:16px; border-radius:10px; font-size:16px; font-weight:900; text-align:center; margin-top:4px; cursor:pointer; }
+  .hero-right { flex:0 0 500px; background:linear-gradient(160deg, #2D4A2D, #1A2E1A); display:flex; align-items:center; justify-content:center; padding:60px; }
+  .hero-stats { display:flex; flex-direction:column; gap:24px; width:100%; }
+  .hstat { background:rgba(212,160,23,0.1); border:1px solid rgba(212,160,23,0.25); border-radius:16px; padding:28px 32px; }
+  .hstat-num { font-size:52px; font-weight:900; color:#D4A017; line-height:1; }
+  .hstat-label { font-size:15px; color:rgba(255,255,255,0.6); margin-top:6px; font-weight:500; }
+
+  /* PROCESS */
+  .process { background:#fff; padding:90px 80px; }
+  .section-eyebrow { font-size:13px; font-weight:700; color:#D4A017; letter-spacing:3px; text-transform:uppercase; margin-bottom:12px; }
+  .section-h { font-size:48px; font-weight:900; color:#1A2E1A; margin-bottom:60px; }
+  .steps { display:flex; gap:0; position:relative; }
+  .steps::before { content:''; position:absolute; top:28px; left:28px; right:28px; height:2px; background:#EEE; z-index:0; }
+  .step { flex:1; position:relative; z-index:1; padding:0 20px; }
+  .step-num { width:56px; height:56px; background:#D4A017; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:900; color:#1A2E1A; margin-bottom:24px; }
+  .step h3 { font-size:19px; font-weight:800; color:#1A2E1A; margin-bottom:10px; }
+  .step p { font-size:14px; color:#666; line-height:1.65; }
+
+  /* SERVICES */
+  .services { background:#F8F6F0; padding:90px 80px; }
+  .svcs { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .svc { background:#fff; border-radius:20px; padding:40px; border-bottom:4px solid #D4A017; }
+  .svc-icon { font-size:44px; margin-bottom:20px; }
+  .svc h3 { font-size:21px; font-weight:900; color:#1A2E1A; margin-bottom:12px; }
+  .svc p { font-size:15px; color:#666; line-height:1.65; }
+
+  /* CTA */
+  .cta { background:#D4A017; padding:80px; text-align:center; }
+  .cta h2 { font-size:56px; font-weight:900; color:#1A2E1A; margin-bottom:14px; }
+  .cta p { font-size:20px; color:rgba(26,46,26,0.7); margin-bottom:40px; }
+  .cta-dark { background:#1A2E1A; color:#fff; padding:20px 56px; border-radius:12px; font-size:18px; font-weight:800; text-decoration:none; display:inline-block; }
+
+  footer { background:#1A2E1A; padding:36px 80px; display:flex; justify-content:space-between; align-items:center; }
+  .f-logo { font-size:18px; font-weight:900; color:#fff; }
+  .f-right { font-size:14px; color:#D4A017; font-weight:600; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="logo-name">☀️ GOLD SUN PERMITS</div>
+    <div class="logo-sub">Central Florida's Permit Experts</div>
+  </div>
+  <div class="nav-links">
+    <a href="#">Services</a>
+    <a href="#">Process</a>
+    <a href="#">About</a>
+    <a href="#" class="nav-cta">Free Quote</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">📋 Permit Expediting Done Right</div>
+    <h1>No Delays.<br /><em>No Hassle.</em>Just Results.</h1>
+    <p class="hero-sub">We handle the paperwork, the follow-ups, and the headaches — so your project starts strong and stays on track.</p>
+    <div class="hero-form">
+      <div class="form-title">Get a Free Quote Today</div>
+      <div class="form-row">Your Name</div>
+      <div class="form-row">Phone Number</div>
+      <div class="form-row">Type of Permit Needed</div>
+      <div class="form-btn">Send My Request →</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-num">500+</div>
+        <div class="hstat-label">Permits filed successfully</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num">48hr</div>
+        <div class="hstat-label">Average submission turnaround</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num">5★</div>
+        <div class="hstat-label">Client satisfaction rating</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="process">
+  <div class="section-eyebrow">How It Works</div>
+  <div class="section-h">Simple. Fast. Done.</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Tell Us Your Project</h3>
+      <p>Fill out a quick form or give us a call. We'll ask a few simple questions about what you're building.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>We Prepare Everything</h3>
+      <p>We gather the documents, fill out the applications, and handle all the coordination with the county.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>We File & Follow Up</h3>
+      <p>We submit your permit application and stay on top of it until it's approved. You'll know every step.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>You Build. We're Done.</div>
+      <p>Permit in hand. Project approved. You break ground while we handle the next one.</p>
+    </div>
+  </div>
+</div>
+
+<div class="services">
+  <div class="section-eyebrow">Services</div>
+  <div class="section-h">We Handle It All</div>
+  <div class="svcs">
+    <div class="svc">
+      <div class="svc-icon">🏠</div>
+      <h3>Residential Permits</h3>
+      <p>Additions, remodels, pools, roofing, fencing — everything your home project needs to get approved and started.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">🏗️</div>
+      <h3>Commercial Permits</h3>
+      <p>New builds, tenant improvements, signage, code compliance. We know the commercial process inside and out.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">🚀</div>
+      <h3>Permit Expediting</h3>
+      <p>Stalled application? We specialize in fast-tracking delayed permits and getting your project back on track fast.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>Your Project Starts Here.</h2>
+  <p>Free consultation. No commitment. Just answers.</p>
+  <a href="#" class="cta-dark">Get My Free Quote →</a>
+</div>
+
+<footer>
+  <div class="f-logo">☀️ GOLD SUN PERMITS</div>
+  <div class="f-right">goldsunpermits.com</div>
+  <div style="color:#555;font-size:14px;">© 2026 Gold Sun Permits</div>
+</footer>
+
+</body>
+</html>

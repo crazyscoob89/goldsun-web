@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1440px; font-family:'Inter',sans-serif; background:#fff; }
+
+  nav { background:#fff; padding:22px 80px; display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid #F5C842; }
+  .logo { display:flex; align-items:center; gap:12px; }
+  .logo-sun { font-size:32px; }
+  .logo-name { font-size:21px; font-weight:900; color:#1A2E1A; }
+  .logo-dot { color:#D4A017; }
+  .nav-links { display:flex; gap:32px; align-items:center; }
+  .nav-links a { color:#333; font-size:15px; font-weight:500; text-decoration:none; }
+  .nav-phone { font-size:15px; font-weight:800; color:#1A2E1A; }
+  .nav-cta { background:#F5C842; color:#1A2E1A; padding:12px 28px; border-radius:8px; font-weight:800; }
+
+  /* HERO - clean white + gold accent */
+  .hero { padding:80px 80px 0; background:#fff; display:flex; gap:80px; align-items:flex-end; }
+  .hero-content { flex:1; padding-bottom:80px; }
+  .hero-badge { display:inline-flex; align-items:center; gap:8px; background:#FFF8E0; color:#B8860B; border:1px solid #F5C842; padding:8px 16px; border-radius:6px; font-size:13px; font-weight:700; margin-bottom:24px; }
+  .hero h1 { font-size:76px; font-weight:900; color:#1A2E1A; line-height:1; margin-bottom:20px; }
+  .hero h1 .gold { color:#D4A017; }
+  .hero-sub { font-size:20px; color:#555; line-height:1.65; max-width:500px; margin-bottom:40px; }
+  .hero-actions { display:flex; gap:16px; align-items:center; margin-bottom:48px; }
+  .btn-primary { background:#D4A017; color:#fff; padding:18px 40px; border-radius:10px; font-size:17px; font-weight:800; text-decoration:none; }
+  .btn-ghost { color:#1A2E1A; font-size:16px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px; }
+  .proof-row { display:flex; gap:40px; }
+  .proof-item { }
+  .proof-num { font-size:36px; font-weight:900; color:#1A2E1A; }
+  .proof-num span { color:#D4A017; }
+  .proof-label { font-size:13px; color:#888; font-weight:500; }
+
+  /* HERO RIGHT - card stack */
+  .hero-right { flex:0 0 480px; }
+  .permit-card { background:#1A2E1A; border-radius:20px 20px 0 0; padding:40px; }
+  .pc-title { font-size:15px; font-weight:700; color:#D4A017; letter-spacing:1px; text-transform:uppercase; margin-bottom:20px; }
+  .pc-item { display:flex; align-items:center; gap:14px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.08); }
+  .pc-item:last-child { border-bottom:none; }
+  .pc-dot { width:10px; height:10px; border-radius:50%; background:#D4A017; flex-shrink:0; }
+  .pc-text { font-size:16px; color:#fff; font-weight:600; }
+  .pc-status { margin-left:auto; font-size:12px; background:rgba(212,160,23,0.2); color:#D4A017; padding:4px 10px; border-radius:20px; font-weight:700; }
+
+  /* YELLOW DIVIDER */
+  .yellow-bar { background:#F5C842; padding:28px 80px; display:flex; gap:60px; align-items:center; }
+  .yb-item { display:flex; align-items:center; gap:12px; }
+  .yb-icon { font-size:22px; }
+  .yb-text { font-size:16px; font-weight:700; color:#1A2E1A; }
+
+  /* SERVICES GRID */
+  .services { padding:80px 80px; background:#F8F6F0; }
+  .s-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; }
+  .s-title { font-size:48px; font-weight:900; color:#1A2E1A; }
+  .s-sub { font-size:16px; color:#888; max-width:300px; text-align:right; line-height:1.6; }
+  .svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .svc-card { background:#fff; border-radius:16px; padding:36px; position:relative; overflow:hidden; }
+  .svc-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:#D4A017; }
+  .svc-num { font-size:64px; font-weight:900; color:#F5C842; line-height:1; margin-bottom:12px; opacity:0.4; }
+  .svc-title { font-size:21px; font-weight:800; color:#1A2E1A; margin-bottom:12px; }
+  .svc-desc { font-size:15px; color:#666; line-height:1.65; }
+
+  /* CTA STRIP */
+  .cta-strip { background:#1A2E1A; padding:80px; display:flex; align-items:center; justify-content:space-between; gap:60px; }
+  .cta-left h2 { font-size:52px; font-weight:900; color:#fff; line-height:1.1; margin-bottom:12px; }
+  .cta-left h2 span { color:#F5C842; }
+  .cta-left p { font-size:18px; color:rgba(255,255,255,0.6); }
+  .cta-right { flex-shrink:0; }
+  .cta-btn-gold { background:#D4A017; color:#1A2E1A; padding:20px 52px; border-radius:12px; font-size:18px; font-weight:900; text-decoration:none; display:inline-block; white-space:nowrap; }
+
+  footer { background:#111; padding:36px 80px; display:flex; justify-content:space-between; align-items:center; }
+  .f-name { font-size:18px; font-weight:900; color:#fff; }
+  .f-url { color:#D4A017; font-weight:700; font-size:15px; }
+  .f-copy { color:#444; font-size:14px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <span class="logo-sun">☀️</span>
+    <span class="logo-name">GOLD SUN<span class="logo-dot"> •</span> PERMITS</span>
+  </div>
+  <div class="nav-links">
+    <a href="#">Services</a>
+    <a href="#">Process</a>
+    <a href="#">About Us</a>
+    <a href="#" class="nav-phone">📞 (407) 000-0000</a>
+    <a href="#" class="nav-cta">Free Quote</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">☀️ Serving Seminole County & Central Florida</div>
+    <h1>Permits.<br /><span class="gold">Fast.</span><br />Done Right.</h1>
+    <p class="hero-sub">Family-owned permit expediting service. We handle the filing, follow-ups, and headaches so you can focus on building.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">Get a Free Quote →</a>
+      <a href="#" class="btn-ghost">See Our Services ↓</a>
+    </div>
+    <div class="proof-row">
+      <div class="proof-item">
+        <div class="proof-num">500<span>+</span></div>
+        <div class="proof-label">Permits Filed</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">48<span>hr</span></div>
+        <div class="proof-label">Avg Turnaround</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">5<span>★</span></div>
+        <div class="proof-label">Rated Service</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="permit-card">
+      <div class="pc-title">Active Permit Types</div>
+      <div class="pc-item"><div class="pc-dot"></div><div class="pc-text">Residential Addition</div><div class="pc-status">Approved ✓</div></div>
+      <div class="pc-item"><div class="pc-dot"></div><div class="pc-text">Pool Construction</div><div class="pc-status">In Review</div></div>
+      <div class="pc-item"><div class="pc-dot"></div><div class="pc-text">Commercial Remodel</div><div class="pc-status">Approved ✓</div></div>
+      <div class="pc-item"><div class="pc-dot"></div><div class="pc-text">Roof Replacement</div><div class="pc-status">Approved ✓</div></div>
+      <div class="pc-item"><div class="pc-dot"></div><div class="pc-text">Fence Installation</div><div class="pc-status">Filed ↗</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="yellow-bar">
+  <div class="yb-item"><span class="yb-icon">✅</span><span class="yb-text">Local Expertise</span></div>
+  <div class="yb-item"><span class="yb-icon">⚡</span><span class="yb-text">Fast Turnaround</span></div>
+  <div class="yb-item"><span class="yb-icon">👨‍👩‍👧</span><span class="yb-text">Family-Owned</span></div>
+  <div class="yb-item"><span class="yb-icon">📋</span><span class="yb-text">Residential & Commercial</span></div>
+  <div class="yb-item"><span class="yb-icon">🤝</span><span class="yb-text">No Hidden Fees</span></div>
+</div>
+
+<div class="services">
+  <div class="s-header">
+    <div class="s-title">What We Handle</div>
+    <div class="s-sub">From a backyard fence to a commercial build — we've got the paperwork covered.</div>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-num">01</div>
+      <div class="svc-title">🏠 Residential Permits</div>
+      <div class="svc-desc">Additions, remodels, pools, roofing, fencing, and more. We handle the filing so your project starts on time.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">02</div>
+      <div class="svc-title">🏗️ Commercial Permits</div>
+      <div class="svc-desc">New construction, tenant improvements, signage, code compliance — we know the commercial process cold.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">03</div>
+      <div class="svc-title">🚀 Permit Expediting</div>
+      <div class="svc-desc">Application stuck? We specialize in fast-tracking stalled permits and getting your project back on schedule.</div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-strip">
+  <div class="cta-left">
+    <h2>Ready to Break <span>Ground?</span></h2>
+    <p>Free consultation. No commitment. Just real answers from real people.</p>
+  </div>
+  <div class="cta-right">
+    <a href="#" class="cta-btn-gold">Start My Project →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="f-name">☀️ GOLD SUN PERMITS</div>
+  <div class="f-url">goldsunpermits.com</div>
+  <div class="f-copy">© 2026 Gold Sun Permits. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
